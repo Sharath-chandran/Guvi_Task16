@@ -14,6 +14,7 @@ class PopulationPage:
 
     # Method to Get Population Count
     def total_population_count(self):
-        WebDriverWait(self.driver, timeout=10).until(EC.visibility_of_element_located(self.population_count))
-        # * unpacks the tuple (By.XPATH, "locator") into find_element(By.XPATH, "locator")
-        return self.driver.find_element(*self.population_count).text
+        dynamic_content = WebDriverWait(self.driver, timeout=10).until(EC.visibility_of_element_located(self.population_count))
+        print("World Population Live count: ", dynamic_content.text)
+        '''# * unpacks the tuple (By.XPATH, "locator") into find_element(By.XPATH, "locator")
+        return self.driver.find_element(*self.population_count).text'''
